@@ -1,0 +1,27 @@
+{
+  "objects": [
+    {
+      "query": "SELECT Id, Name, LastModifiedDate FROM Account",
+      "operation": "Diff",
+      "externalId": "Name"
+    }
+  ],
+  "source": {
+    "org": "source",
+    "username": "${SOURCE_USERNAME}",
+    "password": "${SOURCE_PASSWORD}",
+    "securityToken": "${SOURCE_SECURITY_TOKEN}"
+  },
+  "target": {
+    "org": "target",
+    "username": "${TARGET_USERNAME}",
+    "password": "${TARGET_PASSWORD}",
+    "securityToken": "${TARGET_SECURITY_TOKEN}"
+  },
+  "diffOptions": {
+    "output": "diff-report.csv",
+    "format": "csv",
+    "includeFields": ["Id", "Name", "LastModifiedDate"],
+    "compareFields": ["Name", "LastModifiedDate"]
+  }
+} 

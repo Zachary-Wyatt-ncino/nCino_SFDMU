@@ -1,0 +1,12 @@
+{
+  "name": "sfdmu-deployment",
+  "version": "1.0.0",
+  "description": "SFDMU deployment packages for Salesforce orgs",
+  "scripts": {
+    "deploy": "sfdmu run",
+    "diff": "sfdmu run --sourcefile diff.json"
+  },
+  "dependencies": {
+    "sfdmu": "^4.0.0"
+  }
+} 
