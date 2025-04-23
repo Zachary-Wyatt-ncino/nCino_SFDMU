@@ -3,12 +3,12 @@
     {
       "query": "SELECT Id, Name FROM Account",
       "operation": "Upsert",
-      "externalId": "Name"
+      "externalId": "lookupKey"
     },
     {
       "query": "SELECT Id, Name, AccountId FROM Contact",
       "operation": "Upsert",
-      "externalId": "Name"
+      "externalId": "lookupKey"
     }
   ],
   "source": {
