@@ -1,26 +1,52 @@
 {
   "objects": [
     {
-      "query": "SELECT Id, Name FROM Account",
+      "query": "SELECT nFORCE__App__c, nFORCE__lookupKey__c FROM nFORCE__Group__c",
       "operation": "Upsert",
-      "externalId": "lookupKey"
+      "externalId": "nFORCE__lookupKey__c"
     },
     {
-      "query": "SELECT Id, Name, AccountId FROM Contact",
+      "query": "SELECT nFORCE__lookupKey__c,  FROM nFORCE__Route__c",
       "operation": "Upsert",
-      "externalId": "lookupKey"
+      "externalId": "nFORCE__lookupKey__c"
+    },
+    {
+      "query": "SELECT Name, nFORCE__lookupKey__c FROM nFORCE__Screen__c",
+      "operation": "Upsert",
+      "externalId": "nFORCE__lookupKey__c"
+    },
+    
+    
+    
+    {
+      "query": "SELECT Name, nFORCE__lookupKey__c FROM nFORCE__View__c",
+      "operation": "Upsert",
+      "externalId": "nFORCE__lookupKey__c"
     }
-  ],
-  "source": {
-    "org": "source",
-    "username": "${SOURCE_USERNAME}",
-    "password": "${SOURCE_PASSWORD}",
-    "securityToken": "${SOURCE_SECURITY_TOKEN}"
-  },
-  "target": {
-    "org": "target",
-    "username": "${TARGET_USERNAME}",
-    "password": "${TARGET_PASSWORD}",
-    "securityToken": "${TARGET_SECURITY_TOKEN}"
-  }
-} 
+  ]
+}
+
+{
+  "objects": [
+    {
+      "query": "SELECT Name, nFORCE__lookupKey__c, nFORCE__Parent_Route__r.nFORCE__lookupKey__c, nFORCE__Group__r.nFORCE__lookupKey__c FROM nFORCE__Route_Group__c",
+      "operation": "Upsert",
+      "externalId": "nFORCE__lookupKey__c"
+    }
+  ]
+}
+
+{
+  "objects": [
+    {
+      "query": "SELECT Name, nFORCE__lookupKey__c, nFORCE__Screen__r.nFORCE__lookupKey__c FROM nFORCE__Route__c",
+      "operation": "Upsert",
+      "externalId": "nFORCE__lookupKey__c"
+    },
+    {
+      "query": "SELECT [FIELDS] FROM nFORCE__Screen__c",
+      "operation": "Upsert",
+      "externalId": "nFORCE__lookupKey__c"
+    }
+  ]
+}

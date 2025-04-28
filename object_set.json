@@ -1,0 +1,32 @@
+{
+    "objectSets": [
+      {
+        // Configuration to delete old Accounts and related Opportunities
+        "objects": [
+          {
+            "query": "SELECT Id FROM Account WHERE Name LIKE '%Account To Delete%'",
+            "operation": "DeleteHierarchy"
+          },
+          {
+            "query": "SELECT Id, AccountId FROM Opportunity",
+            "operation": "DeleteHierarchy",
+            "master": false
+          }
+        ]
+      },
+      {
+        // Configuration to insert new Accounts and related Opportunities
+        "objects": [
+          {
+            "query": "SELECT Id, Name, Phone FROM Account WHERE Name LIKE '%Account To Insert%'",
+            "operation": "Insert"
+          },
+          {
+            "query": "SELECT Id, Type, StageName, AccountId FROM Opportunity",
+            "operation": "Insert",
+            "master": false
+          }
+        ]
+      }
+    ]
+  }
